@@ -1,13 +1,3 @@
-<div>
-<button onclick="draw()">Trazar</button>
-<button onclick="rotarTrazar(1)">Girar rectangulo 1</button>
-<!-- 
-  Completar la función "rotarTrazar" para lograr girar sobre su respectivo centro:
-  con el botón "Girar Rectangulo 1" el primer rectangulo hacia la izquierda 45°
-  con el botón "Girar Rectangulo 2" el segundo rectangulo hacia la derecha 60°
--->
-<div>
-  <button onclick="draw()">Trazar</button>
 <!-- 
   Completar la función "rotarTrazar" para lograr girar sobre su respectivo centro:
   con el botón "Girar Rectangulo 1" el primer rectangulo hacia la izquierda 45°
@@ -17,23 +7,7 @@
   <button onclick="draw()">Trazar</button>
   <button onclick="rotarTrazar(1)">Girar Rectangulo 1</button>
   <button onclick="rotarTrazar(2)">Girar Rectangulo 2</button>
-</div>
-<canvas id='canvas' height=400/>
-<script type="text/javascript">
-var ctx = document.getElementById('canvas').getContext('2d');
-function deg2rad(g) {
-  return (Math.PI / 180) * g;
-}
-function rotarTrazar(n) {
-<!-- 
-  Completar la función "rotarTrazar" para lograr girar sobre su respectivo centro:
-  con el botón "Girar Rectangulo 1" el primer rectangulo hacia la izquierda 45°
-  con el botón "Girar Rectangulo 2" el segundo rectangulo hacia la derecha 60°
--->
-<div>
-  <button onclick="draw()">Trazar</button>
-  <button onclick="rotarTrazar(1)">Girar Rectangulo 1</button>
-  <button onclick="rotarTrazar(2)">Girar Rectangulo 2</button>
+  
 </div>
 <canvas id='canvas' height=400/>
 <script type="text/javascript">
@@ -47,18 +21,27 @@ function rotarTrazar(n) {
   ctx.fillStyle = '#FFFFFF';
   ctx.fillRect(30, 30, 100, 100);
   // rec blue -45°
-  ctx.fillStyle = '#4D4E53';
+  ctx.fillStyle = '#0095DD';
+  ctx.translate(100, 80);
   ctx.rotate(deg2rad(-45)); // rotate
+  ctx.translate(-100, -80);
+  ctx.fillRect(30, 30, 100, 100);
   
   }
-
   if (n == 2) {
   ctx.fillStyle = '#FFFFFF';
   ctx.fillRect(150, 30, 100, 100);
   // rec blue 60°
-  ctx.fillStyle = '#4D4E53';
+  ctx.fillStyle = '#0095DD';
+  ctx.translate(200, 80);
   ctx.rotate(deg2rad(60)); // rotate
+  ctx.translate(-200, -80);
+  ctx.fillRect(150, 30, 100, 100);
   }
+  
+ /* if (n == 3) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }*/
 }
   
 function draw() {
